@@ -1,0 +1,12 @@
+{
+	"apiKey" : "AIzaSyCWJQwgUwgDcA6YDgAj-dqIPKjUZz7pvA8",
+	"port" : "3030",
+	"mongo" : {
+		"host" : "localhost",
+		"port" : "27017",
+		"db" : "GeoApp",
+		"table" : "Test",
+		"usrename" : "",
+		"password" : ""
+	}
+}

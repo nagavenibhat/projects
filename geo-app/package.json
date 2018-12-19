@@ -1,0 +1,19 @@
+{
+  "name": "geo-app",
+  "version": "1.0.0",
+  "description": "\"to detect langitude and altitude from address\"",
+  "main": "index.js",
+  "git repository": "https://github.com/nagavenibhat/unbxd",
+  "scripts": {
+    "test": "\"node app/server.js\""
+  },
+  "author": "\"Nagaveni\"",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "mongodb": "^3.1.10",
+    "node-geocoder": "^3.22.0",
+  }
+}

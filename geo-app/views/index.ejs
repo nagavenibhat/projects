@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Geo App</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <div class="container">
+      <fieldset>
+        <% if( typeof(error) !== 'undefined' &&  error !== null){ %>
+          <p><%= error %></p>
+        <% } %>
+        <form action="/" method="post">
+          <input name="address" type="text" class="ghost-input" placeholder="Enter the address" required>
+          <input type="submit" class="ghost-button" value="Get Details">
+        </form>
+       
+        <% if( typeof(result) !== 'undefined' &&  result !== null){ %>
+          <p><%= result %></p>
+        <% } %>
+      </fieldset>
+      <fieldset>
+        
+      <form action="/getHistory" method="post">
+        <input type="submit" id="gethistory"  value="Get History">
+      </form>
+      </fieldset>
+
+      <% if( typeof(data) !== 'undefined' ){ %>
+      <table style="border: solid">
+         <tr>
+            <th>Query</th><th>Latitude</th><th>Longitude</th><th>search time</th>
+         </tr>
+         <% for (var i = 0; i < data.length;  i++) { %>
+          <tr>
+            <td><%= data[i].query %></td>
+            <td><%= data[i].latitude %></td>
+            <td><%= data[i].longitude %></td>
+            <td><%= data[i].time %></td>
+          </tr>    
+         <% } %>
+      </table>
+      <% } %>
+    </div>
+  </body>
+</html>
