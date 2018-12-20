@@ -28,21 +28,26 @@
       </form>
       </fieldset>
 
-      <% if( typeof(data) !== 'undefined' ){ %>
-      <table style="border: solid">
-         <tr>
-            <th>Query</th><th>Latitude</th><th>Longitude</th><th>search time</th>
-         </tr>
-         <% for (var i = 0; i < data.length;  i++) { %>
-          <tr>
-            <td><%= data[i].query %></td>
-            <td><%= data[i].latitude %></td>
-            <td><%= data[i].longitude %></td>
-            <td><%= data[i].time %></td>
-          </tr>    
-         <% } %>
-      </table>
-      <% } %>
+      <% if( typeof(table) !== 'undefined' ){
+        if(table.length == 0){ %>
+        <p>No search history found. </p>
+        <% } else { %>
+        <table style="border: solid">
+           <tr>
+              <th>Address</th><th>Latitude</th><th>Longitude</th><th>Last search time</th><th>Search Count</th>
+           </tr>
+           <% for (var i = 0; i < table.length;  i++) { %>
+            <tr>
+              <td><%= table[i].address %></td>
+              <td><%= table[i].latitude %></td>
+              <td><%= table[i].longitude %></td>
+              <td><%= table[i].lastSearchTime %></td>
+              <td><%= table[i].searchCount %></td>
+            </tr>    
+           <% } %>
+        </table>
+      <% }
+      } %>
     </div>
   </body>
 </html>

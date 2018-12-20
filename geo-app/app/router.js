@@ -18,10 +18,10 @@ router.post('/',parseUrlencoded, function(req, res) {
 })
 
 router.post('/getHistory', function(req, res) {
-    mongo.read().toArray(function(err, result) {
+    mongo.read({status  : 'success' }).toArray(function(err, result) {
         if (err) throw err;
         res.render('index', {
-            data: result
+            table: result
         });
     });
 })
